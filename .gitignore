@@ -1,0 +1,6 @@
+
+.vs/FileEncrypter/v16/.suo
+.vs/FileEncrypter/v16/Server/sqlite3/db.lock
+.vs/FileEncrypter/v16/Server/sqlite3/storage.ide
+*.ide-shm
+*.ide-wal
