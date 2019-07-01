@@ -1,0 +1,12 @@
+C:\Users\danie\source\repos\FileEncrypter\bin\Debug\FileEncrypter.exe.config
+C:\Users\danie\source\repos\FileEncrypter\bin\Debug\FileEncrypter.exe
+C:\Users\danie\source\repos\FileEncrypter\bin\Debug\FileEncrypter.pdb
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.csprojAssemblyReference.cache
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.Properties.Resources.resources
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.csproj.GenerateResource.cache
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.exe
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.pdb
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.Encrypt.resources
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.DecryptForm.resources
+C:\Users\danie\source\repos\FileEncrypter\obj\Debug\FileEncrypter.Form1.resources
