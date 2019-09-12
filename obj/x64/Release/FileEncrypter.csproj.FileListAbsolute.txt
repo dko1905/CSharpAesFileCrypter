@@ -1,0 +1,15 @@
+C:\Users\danie\Downloads\CSharpAesFileCrypter\bin\x64\Release\FileEncrypter.exe.config
+C:\Users\danie\Downloads\CSharpAesFileCrypter\bin\x64\Release\FileEncrypter.exe
+C:\Users\danie\Downloads\CSharpAesFileCrypter\bin\x64\Release\FileEncrypter.pdb
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.DecryptForm.resources
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.Encrypt.resources
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.Form1.resources
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.Properties.Resources.resources
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.csproj.GenerateResource.cache
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.csproj.CoreCompileInputs.cache
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.exe
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.pdb
+C:\Users\danie\Downloads\CSharpAesFileCrypter\bin\x64\Release\FileEncrypter.exe.manifest
+C:\Users\danie\Downloads\CSharpAesFileCrypter\bin\x64\Release\FileEncrypter.application
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.exe.manifest
+C:\Users\danie\Downloads\CSharpAesFileCrypter\obj\x64\Release\FileEncrypter.application
