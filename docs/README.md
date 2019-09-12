@@ -8,6 +8,7 @@ You may encounter an error at startup. The program saves the key in the folder w
 ![Screenshot of errorbox](Error.PNG)
 
 Screenshot of main menu.
+
 ![Screenshot of main menu](main.PNG)
 
 ## License
