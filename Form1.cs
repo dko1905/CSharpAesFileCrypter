@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace FileEncrypter
 {
@@ -18,40 +19,31 @@ namespace FileEncrypter
         public Form1()
         {
             InitializeComponent();
-            if (File.Exists("key") && File.Exists("iv"))
-            {
-                aes = new AesCrypter();
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("Please copy your KEY and IV or generate new!\n Do you want to generate new?", "Error",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                if (result == DialogResult.Yes)
-                {
-                    AesCrypter.GenerateNewKeyAndIV();
-                    aes = new AesCrypter();
-                }
-            }
-        }
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            //generate new key
-            AesCrypter.GenerateNewKeyAndIV();
-            aes = new AesCrypter();
         }
 
         private void Button1_Click(object sender, EventArgs e) // encrypt
         {
             Encrypt en = new Encrypt(aes);
             en.Show();
-            //en.Close();
         }
 
         private void Button3_Click(object sender, EventArgs e) // decrypt button
         {
             DecryptForm df = new DecryptForm(aes);
             df.Show();
-            //df.Close();
+        }
+
+        private void DoneButton_Click(object sender, EventArgs e) // setbutton
+        {
+            aes = new AesCrypter(Tuple.Create<byte[],byte[]>(Convert.FromBase64String(keyBox.Text), Convert.FromBase64String(ivBox.Text)) );
+        }
+
+        private void GenerateButton_Click(object sender, EventArgs e)
+        {
+            Tuple<byte[], byte[]> t = AesCrypter.GenerateNewKeyAndIV();
+            keyBox.Text = Convert.ToBase64String(t.Item1);
+            ivBox.Text = Convert.ToBase64String(t.Item2);
+            aes = new AesCrypter(t);
         }
     }
 }

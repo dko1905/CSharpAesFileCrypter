@@ -27,17 +27,29 @@ namespace FileEncrypter
             // countinue in OpenFileDialog1_FileOk func
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            //generate new key
-            AesCrypter.GenerateNewKeyAndIV();
-            aes = new AesCrypter();
-        }
-
         private void OpenFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             saveFileDialog1.ShowDialog();
             // countinue in next
+        }
+
+        public void setProgress(int progress)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<int>(setProgress), new object[] { progress });
+                return;
+            }
+            progressBar1.Value = progress;
+        }
+        public void setColor(Color color)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<Color>(setColor), new object[] { color });
+                return;
+            }
+            progressBar1.BackColor = color;
         }
 
         async void doSomthingAsych()
@@ -46,31 +58,31 @@ namespace FileEncrypter
             {
                 FileStream data = (FileStream)openFileDialog1.OpenFile();
                 
-                progressBar1.Value = 2;
-                MemoryStream encrypted = aes.Encrypt(data);
-                progressBar1.Value = 4;
+                setProgress(2); 
+                Stream encrypted = aes.Encrypt(data);
+                setProgress(4);
                 FileStream s = (FileStream)saveFileDialog1.OpenFile();
-                progressBar1.Value = 6;
-                encrypted.WriteTo(s);
+                setProgress(6);
+                encrypted.CopyTo(s);
 
                 encrypted.Close();
                 data.Close();
                 s.Close();
-                progressBar1.Value = 10;
+                setProgress(10);
             }
             catch (Exception ex)
             {
-                ModifyProgressBarColor.SetState(progressBar1, 2);
-                debugConsole.AppendText($"Error: {ex}\n");
+                setColor(Color.Red);
+                debugConsole.AppendText($"Error: {ex.ToString()}\n");
             }
         }
 
         private void SaveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            ModifyProgressBarColor.SetState(progressBar1, 1);
+            progressBar1.BackColor = Color.Green;
             progressBar1.Minimum = 0;
             progressBar1.Maximum = 10;
-            doSomthingAsych();
+            Task.Run( new Action(doSomthingAsych) );
         }
     }
 }

@@ -136,7 +136,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="progressColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DecryptForm.resx">
       <DependentUpon>DecryptForm.cs</DependentUpon>

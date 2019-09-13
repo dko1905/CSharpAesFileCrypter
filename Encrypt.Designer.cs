@@ -91,6 +91,7 @@
             this.Controls.Add(this.debugConsole);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Encrypt";
             this.Text = "Encrypt";

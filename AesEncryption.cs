@@ -11,25 +11,21 @@ public class AesCrypter
     AesManaged myAes;
     ICryptoTransform encryptor;
     ICryptoTransform decryptor;
-    public AesCrypter()
+    public AesCrypter(Tuple<byte[], byte[]> KeyAndIv)
     {
-        KeyAndIv = Tuple.Create<byte[], byte[]>(File.ReadAllBytes("key"), File.ReadAllBytes("iv"));
         myAes = new AesManaged();
         myAes.Key = KeyAndIv.Item1;
         myAes.IV = KeyAndIv.Item2;
 
         encryptor = myAes.CreateEncryptor(KeyAndIv.Item1, KeyAndIv.Item2);
         decryptor = myAes.CreateDecryptor(KeyAndIv.Item1, KeyAndIv.Item2);
-
     }
 
-    public MemoryStream Encrypt(Stream s)
+    public Stream Encrypt(Stream s)
     {
         CryptoStream cryptoStream = new CryptoStream(s, encryptor, CryptoStreamMode.Read);
-        MemoryStream output = new MemoryStream();
 
-        cryptoStream.CopyTo(output);
-        return output;        
+        return cryptoStream;        
     }
 
     public byte[] Encrypt(byte[] inputBytes) // key and iv is in myAes
@@ -43,13 +39,11 @@ public class AesCrypter
         }
     }
 
-    public MemoryStream Decrypt(Stream s)
+    public Stream Decrypt(Stream s)
     {
         CryptoStream cryptoStream = new CryptoStream(s, decryptor, CryptoStreamMode.Read);
-        MemoryStream output = new MemoryStream();
 
-        cryptoStream.CopyTo(output);
-        return output;        
+        return cryptoStream;        
     }
 
     public byte[] Decrypt(byte[] inputBytes)
@@ -63,18 +57,16 @@ public class AesCrypter
         }
     }
 
-    static public void GenerateNewKeyAndIV()
+    static public Tuple<byte[], byte[]> GenerateNewKeyAndIV()
     {
         using (AesManaged myAse = new AesManaged())
         {
+            Tuple<byte[], byte[]> keyAndIv;
             myAse.GenerateKey();
             myAse.GenerateIV();
-            File.WriteAllBytes("key", myAse.Key);
-            File.WriteAllBytes("iv", myAse.IV);
+            keyAndIv = Tuple.Create<byte[], byte[]>(myAse.Key, myAse.IV);
+            return keyAndIv;
         }
     }
-
-
-    
 }
 
