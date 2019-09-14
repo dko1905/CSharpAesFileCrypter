@@ -52,6 +52,15 @@ namespace FileEncrypter
             progressBar1.BackColor = color;
         }
 
+        public void appedConsole(string s)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<string>(appedConsole), new object[] { s });
+                return;
+            }
+            debugConsole.AppendText(s);
+        }
         async void doSomthingAsych()
         {
             try
@@ -73,7 +82,7 @@ namespace FileEncrypter
             catch (Exception ex)
             {
                 setColor(Color.Red);
-                debugConsole.AppendText($"Error: {ex.ToString()}\n");
+                appedConsole($"Error: {ex.ToString()}\n");
             }
         }
 

@@ -81,8 +81,18 @@ namespace FileEncrypter
             catch (Exception ex)
             {
                 setColor(Color.Red);
-                debugConsole.AppendText($"Error: {ex.ToString()}\n");
+                appedConsole($"Error: {ex.ToString()}\n");
             }
+        }
+
+        public void appedConsole(string s)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<string>(appedConsole), new object[] { s });
+                return;
+            }
+            debugConsole.AppendText(s);
         }
 
         private void SaveFileDialog1_FileOk(object sender, CancelEventArgs e)

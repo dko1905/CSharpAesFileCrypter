@@ -41,9 +41,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(116, 129);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(0, 157);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(394, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Encrypt";
             this.button1.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(116, 158);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button3.Location = new System.Drawing.Point(0, 134);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(394, 23);
             this.button3.TabIndex = 4;
             this.button3.Text = "Decrypt";
             this.button3.UseVisualStyleBackColor = true;
@@ -79,9 +81,10 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(116, 91);
+            this.generateButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.generateButton.Location = new System.Drawing.Point(0, 88);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(141, 23);
+            this.generateButton.Size = new System.Drawing.Size(394, 23);
             this.generateButton.TabIndex = 9;
             this.generateButton.Text = "Generate new key and iv";
             this.generateButton.UseVisualStyleBackColor = true;
@@ -89,23 +92,28 @@
             // 
             // ivBox
             // 
+            this.ivBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ivBox.Location = new System.Drawing.Point(54, 36);
             this.ivBox.Name = "ivBox";
-            this.ivBox.Size = new System.Drawing.Size(259, 20);
+            this.ivBox.Size = new System.Drawing.Size(333, 20);
             this.ivBox.TabIndex = 8;
             // 
             // keyBox
             // 
+            this.keyBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.keyBox.Location = new System.Drawing.Point(54, 9);
             this.keyBox.Name = "keyBox";
-            this.keyBox.Size = new System.Drawing.Size(259, 20);
+            this.keyBox.Size = new System.Drawing.Size(333, 20);
             this.keyBox.TabIndex = 7;
             // 
             // setButton
             // 
-            this.setButton.Location = new System.Drawing.Point(116, 62);
+            this.setButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.setButton.Location = new System.Drawing.Point(0, 111);
             this.setButton.Name = "setButton";
-            this.setButton.Size = new System.Drawing.Size(75, 23);
+            this.setButton.Size = new System.Drawing.Size(394, 23);
             this.setButton.TabIndex = 6;
             this.setButton.Text = "Set";
             this.setButton.UseVisualStyleBackColor = true;
@@ -115,9 +123,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(320, 187);
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(394, 180);
             this.Controls.Add(this.ivLabel);
             this.Controls.Add(this.keyLabel);
             this.Controls.Add(this.generateButton);
@@ -128,6 +137,7 @@
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(410, 219);
             this.Name = "Form1";
             this.Text = "Aes Crypter";
             this.ResumeLayout(false);
