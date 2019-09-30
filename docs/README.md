@@ -13,4 +13,4 @@ Gui por cifri dosierojn kun Aes-256-cifrado. Ne devas esti maksimuma grando limo
 La gui estis rediseinita por esti pli simpla.
 
 ## License
-[MIT](License.md)
+[MIT](../License.md)
