@@ -7,7 +7,7 @@ A GUI for encrypting files with AES-256 encryption. The program uses streams so 
 - Lightweight (compared to a website)
 
 ## Image
-[image of program](./image.png)
+![image of program](./image.png)
 
 ## Other
 This is currently the most starred project on my profile, for some reason. So if you like it please look at my other projects, for example [mandelbrot](https://github.com/Dko1905/mandelbrot), and thanks for all the stars.
